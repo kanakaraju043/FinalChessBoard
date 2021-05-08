@@ -1,24 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChessBoardTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="URx-ub-BPG">
+                                <rect key="frame" x="19.666666666666657" y="180.66666666666663" width="375" height="375"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="URx-ub-BPG" secondAttribute="height" multiplier="375:375" id="r4k-zu-Yru"/>
+                                    <constraint firstAttribute="width" constant="375" id="xeV-we-rEd"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vbV-Zp-q1Y">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="unique" id="rAy-Re-6vm" customClass="BoardCollectionViewCell" customModule="ChessBoardTask" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN4-zr-N6i">
+                                                    <rect key="frame" x="25" y="25" width="0.0" height="0.0"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="qN4-zr-N6i" firstAttribute="centerX" secondItem="rAy-Re-6vm" secondAttribute="centerX" id="6GW-lP-wJa"/>
+                                            <constraint firstItem="qN4-zr-N6i" firstAttribute="centerY" secondItem="rAy-Re-6vm" secondAttribute="centerY" id="lKH-d0-fna"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellTitle" destination="qN4-zr-N6i" id="33A-ct-fle"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="PKM-Sn-6eo"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="d4G-L4-XrG"/>
+                                </connections>
+                            </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Please enter board size between 2 to 20" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PYf-2R-RJO">
+                                <rect key="frame" x="5" y="57" width="299" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="D1F-AA-zRa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ODZ-KN-CjS"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bl3-Hf-QtN">
+                                <rect key="frame" x="309" y="57" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="KCi-zv-wQa"/>
+                                </constraints>
+                                <state key="normal" title="Create Board"/>
+                                <connections>
+                                    <action selector="createChessboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Btq-XF-O12"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PYf-2R-RJO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="83U-dP-UVg"/>
+                            <constraint firstItem="URx-ub-BPG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CIm-Dh-Erz"/>
+                            <constraint firstItem="URx-ub-BPG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="JBa-B6-Oc1"/>
+                            <constraint firstItem="bl3-Hf-QtN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="JFD-uI-AS3"/>
+                            <constraint firstItem="bl3-Hf-QtN" firstAttribute="leading" secondItem="PYf-2R-RJO" secondAttribute="trailing" constant="5" id="jK2-nG-Sxx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bl3-Hf-QtN" secondAttribute="trailing" constant="5" id="jUm-6k-BoT"/>
+                            <constraint firstItem="URx-ub-BPG" firstAttribute="width" secondItem="URx-ub-BPG" secondAttribute="height" multiplier="375:375" id="jgX-CA-vml"/>
+                            <constraint firstItem="PYf-2R-RJO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="ter-oe-oeT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="boardSizeTextField" destination="PYf-2R-RJO" id="fxT-4J-lUw"/>
+                        <outlet property="collectionView" destination="URx-ub-BPG" id="Ldc-L6-hoD"/>
+                        <outlet property="collectionViewWidthConstraint" destination="xeV-we-rEd" id="CJO-Li-gmQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-20.289855072463769" y="75"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -13,6 +13,7 @@
 		107B607F26466BF70001921D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107B607D26466BF70001921D /* Main.storyboard */; };
 		107B608126466BF80001921D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 107B608026466BF80001921D /* Assets.xcassets */; };
 		107B608426466BF80001921D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107B608226466BF80001921D /* LaunchScreen.storyboard */; };
+		107B608E264681760001921D /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107B608D264681760001921D /* BoardCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		107B608026466BF80001921D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		107B608326466BF80001921D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		107B608526466BF80001921D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		107B608D264681760001921D /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				107B607726466BF70001921D /* AppDelegate.swift */,
 				107B607926466BF70001921D /* SceneDelegate.swift */,
 				107B607B26466BF70001921D /* ViewController.swift */,
+				107B608D264681760001921D /* BoardCollectionViewCell.swift */,
 				107B607D26466BF70001921D /* Main.storyboard */,
 				107B608026466BF80001921D /* Assets.xcassets */,
 				107B608226466BF80001921D /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 				107B607C26466BF70001921D /* ViewController.swift in Sources */,
 				107B607826466BF70001921D /* AppDelegate.swift in Sources */,
 				107B607A26466BF70001921D /* SceneDelegate.swift in Sources */,
+				107B608E264681760001921D /* BoardCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
